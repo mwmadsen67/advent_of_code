@@ -37,7 +37,10 @@ const makeImages = (input) => {
     }
   }
 
-  console.log(image.join(' '))
+  console.log(image.map(el => {
+    if (el === '\n') return '\n';
+    return el === '0' ? ' ' : '*';
+  }).join(''))
   return image;
 }
 
